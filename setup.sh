@@ -11,9 +11,7 @@ command -v rg >/dev/null 2>&1 || {
 
 command -v rtk >/dev/null 2>&1 || {
   echo "Installing rtk..."
-  cargo install rtk 2>/dev/null || {
-    echo "rtk not found and cargo not available. Install manually."
-  }
+  curl -fsSL https://raw.githubusercontent.com/rtk-ai/rtk/refs/heads/master/install.sh | sh
 }
 
 npm install
