@@ -1,6 +1,6 @@
 # opencode-config
 
-Personal [opencode](https://opencode.ai) configuration for fast, minimal AI-assisted coding.
+Personal [opencode](https://opencode.ai) configuration for fast, minimal AI-assisted coding on Linux.
 
 ## Features
 
