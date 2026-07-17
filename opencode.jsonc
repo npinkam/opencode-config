@@ -1,0 +1,63 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "openrouter/deepseek/deepseek-v4-flash",
+  "default_agent": "build",
+  "plugin": ["@dietrichgebert/ponytail"],
+  "permission": {
+    "skill": {
+      "*": "allow"
+    },
+    "bash": {
+      "rm -rf /": "deny",
+      "rm -rf /*": "deny",
+      "rm -rf ~": "deny",
+      "rm -rf ~/*": "deny",
+      "sudo rm -rf": "deny",
+      "sudo rm -rf *": "deny",
+      "git push --force": "deny",
+      "git push --force *": "deny",
+      "git push -f": "deny",
+      "git push -f *": "deny",
+      "git reset --hard": "deny",
+      "git reset --hard *": "deny",
+      "git clean -fdx": "deny",
+      "git clean -fdx *": "deny",
+      "chmod -R 777": "deny",
+      "chmod -R 777 *": "deny",
+      "dd if=*": "deny",
+      "mkfs *": "deny",
+      "mkfs.*": "deny",
+      "fdisk *": "deny",
+      "parted *": "deny",
+      "rg *": "allow",
+      "curl * | bash": "deny",
+      "curl * | sh": "deny",
+      "wget * | bash": "deny",
+      "wget * | sh": "deny",
+      "* --no-verify *": "deny",
+      "*": "allow"
+    }
+  },
+  "agent": {
+    "advisor": {
+      "mode": "subagent",
+      "model": "openrouter/qwen/qwen3.7-max",
+      "description": "Architect for planning and review",
+      "permission": {
+        "edit": "deny"
+      }
+    },
+    "explore": {
+      "mode": "subagent",
+      "model": "openrouter/deepseek/deepseek-v4-flash",
+      "description": "Fast read-only agent for exploring codebases via ripgrep structures",
+      "permission": {
+        "edit": "deny",
+        "bash": {
+          "rg *": "allow",
+          "*": "allow"
+        }
+      }
+    }
+  }
+}
