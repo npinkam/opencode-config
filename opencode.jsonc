@@ -39,14 +39,6 @@
     }
   },
   "agent": {
-    "planner": {
-      "mode": "subagent",
-      "model": "openrouter/qwen/qwen3.7-max",
-      "description": "Multi-file orchestrator for structuring tool calls and setting project milestones",
-      "permission": {
-        "edit": "deny"
-      }
-    },
     "advisor": {
       "mode": "subagent",
       "model": "openrouter/deepseek/deepseek-v4-pro",

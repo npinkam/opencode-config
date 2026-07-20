@@ -39,7 +39,7 @@
 - State assumptions. If uncertain, ask before implementing.
 - If multiple interpretations exist, present them — don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
-- Complex multi-file changes or architectural decisions: delegate to planner first, then advisor for deep reasoning.
+- Complex multi-file changes or architectural decisions: delegate to advisor.
 - **Codebase Discovery & Structural Mapping:** If you need to find where an interface, class, or dependency is defined, invoke the `explore` subagent immediately.
 - Direct the `explore` agent to explicitly load the `codebase-search` skill to map out code using native `grep` and `glob` tools instead of iterating with `cat`. Treat its output as read-only structural truth before editing.
 
