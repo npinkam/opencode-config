@@ -34,8 +34,9 @@ If the current branch matches the base branch:
   2. From the diff, suggest a branch name in the format `type/scope-description` (e.g. `feat/auth-add-login`).
   3. Ask: "You're on the default branch. Create `[suggested-name]`? (yes / name: [custom] / cancel)"
   4. On `yes` or `name:`:
+     Show the staged diff and ask "Commit and push? (yes / no)". On `yes`:
      ```bash
-     git checkout -b [branch-name] && git add -A && git commit -m "[type(scope): description]" && git push -u origin [branch-name]
+     git checkout -b [branch-name] && git add -u && git commit -m "[type(scope): description]" && git push -u origin [branch-name]
      ```
   5. Then proceed to Step 2. On `cancel`, stop.
 

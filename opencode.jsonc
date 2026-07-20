@@ -62,8 +62,8 @@
       "permission": {
         "edit": "deny",
     "bash": {
-        "*": "allow"
-      }
+          "*": "allow"
+        }
       }
     }
   }
