@@ -4,9 +4,14 @@
 
 - Never commit unless explicitly asked.
 - Always run lint, typecheck, and tests after changes.
-- No comments in code unless explicitly requested.
+- Comments explain why, not what. Code says what; comments say why it's that way.
+  - Docstrings for public APIs and complex functions. One line if it fits, more if it doesn't.
+  - Inline comments only for non-obvious intent: why this approach, why this edge-case guard.
+  - Section dividers (`# -- Section --`) in long files with multiple concerns. Never inside a function.
+- No commented-out code. Delete it.
 - Read and understand existing code before writing new code.
 - Be concise. No preambles, summaries, or unnecessary explanations.
+- Number steps in multi-step tasks. Cap lists at 5 items.
 - Always respond in English.
 
 ## Preferences
@@ -34,7 +39,7 @@
 - State assumptions. If uncertain, ask before implementing.
 - If multiple interpretations exist, present them — don't pick silently.
 - If a simpler approach exists, say so. Push back when warranted.
-- Complex multi-file changes or architectural decisions: delegate to advisor first.
+- Complex multi-file changes or architectural decisions: delegate to planner first, then advisor for deep reasoning.
 - **Codebase Discovery & Structural Mapping:** If you need to find where an interface, class, or dependency is defined, invoke the `explore` subagent immediately.
 - Direct the `explore` agent to explicitly load the `codebase-search` skill to map out code using `rg` flags instead of iterating with `cat`. Treat its output as read-only structural truth before editing.
 
