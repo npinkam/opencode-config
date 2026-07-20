@@ -43,6 +43,13 @@
 - **Codebase Discovery & Structural Mapping:** If you need to find where an interface, class, or dependency is defined, invoke the `explore` subagent immediately.
 - Direct the `explore` agent to explicitly load the `codebase-search` skill to map out code using native `grep` and `glob` tools instead of iterating with `cat`. Treat its output as read-only structural truth before editing.
 
+## Verification Planning
+
+Before any non-trivial change (3+ files, refactor, new feature, schema change):
+1. Run `tree -L 3 -I 'node_modules|.git|dist|build|.next|.venv|__pycache__|*.pyc|.slim|bun.lock|pnpm-lock.yaml|yarn.lock|package-lock.json' --dirsfirst -a` to map the codebase structure.
+2. Plan what to verify — how each changed component will be validated, what existing tests might break, what manual checks are needed.
+3. State the verification plan before writing code.
+
 ## Simplicity First
 
 - Minimum code that solves the problem. No speculative features.
